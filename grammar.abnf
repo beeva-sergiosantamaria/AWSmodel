@@ -1,0 +1,9 @@
+#ABNF 1.0 UTF-8;
+language es-ES; //use the American English pronunciation dictionary.
+mode voice;  //the input for this grammar will be spoken words.
+
+root $yesorno;
+
+$yes = si;
+$no = no;
+$yesorno = $yes | $no;

@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Modelo BCN</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" href="styles/main.css" />
+<link rel="stylesheet" href="styles/animate.css" />
+<link rel="manifest" href="manifest.json">
+<meta name="mobile-web-app-capable" content="yes">
+</head>
+<body>
+<div class='advertising'>Real time data on a scale simulate enviroment</div>
+<div id="temp" class="valueIndicator hide">Temperature
+	<div class="infoToolImageInside TemperatureHi"></div>
+	<div class="infoToolImageInside TemperatureMed"></div>
+	<div class="infoToolImageInside TemperatureLow"></div>
+</div>
+<div id="hum" class="valueIndicator hide">Humidity
+	<div class="infoToolImageInside HumidifyHi"></div>
+	<div class="infoToolImageInside HumidifyMed"></div>
+	<div class="infoToolImageInside HumidifyLow"></div>
+</div>
+<div id="lux" class="valueIndicator hide">Illuminance
+	<div class="infoToolImageInside LuxHi"></div>
+	<div class="infoToolImageInside LuxMed"></div>
+	<div class="infoToolImageInside LuxLow"></div>
+</div>
+<div id="press" class="valueIndicator hide">Pressure
+	<div class="infoToolImageInside PressHi"></div>
+	<div class="infoToolImageInside PressMed"></div>
+	<div class="infoToolImageInside PressLow"></div>
+</div>					
+  	<div id="containerMap"></div>
+  	<div id="infoPostit" class="infoPostit animated fadeOutUpBig">
+  		<div id="title" class="titleMain"></div>
+  		<div id="current" class="current"></div>
+  		<div id="titlesec" class="title">Current data</div>
+  		<div class="info">
+  			<div id="infotype" class="infoType"><span>Temperature: </span><span id="specificTemp"></span></div>
+  			<div id="infotype" class="infoType"><span>Humidity: </span><span id="specificHum"></span></div>
+  			<div id="infotype" class="infoType"><span>Iluminance: </span><span id="specificLux"></span></div>
+  			<div id="infotype" class="infoType"><span>Pressure: </span><span id="specificPress"></span></div>
+  		</div>
+  		<div id="titlesec" class="title" style="margin-top: 10%;">Data History</div>
+  		<div id="graph" class="graph"></div>
+  	</div>
+	<canvas id="debug" style="position:absolute; left:100px"></canvas>
+	<script type="text/javascript" src="js/three.min.js"></script>
+	<script type="text/javascript" src="js/d3-three.js"></script>
+	<script type="text/javascript" src="js/d3.js"></script>
+	<script type="text/javascript" src="js/tween.js"></script>
+	<script type="text/javascript" src="js/loaders/DDSLoader.js"></script>
+	<script type="text/javascript" src="js/loaders/MTLLoader.js"></script>
+	<script type="text/javascript" src="js/loaders/OBJLoader.js"></script>
+	<script src="http://threejs.org/examples/js/loaders/OBJMTLLoader.js"></script>
+	<script type="text/javascript" src="js/OrbitControls.js"></script>
+	<script src="js/THREEx.KeyboardState.js"></script>
+	<script src="js/THREEx.FullScreen.js"></script>
+	<script src="js/THREEx.WindowResize.js"></script>
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/CSS3DRenderer.js"></script>
+	<script type="text/javascript" src="js/sceneJS/renders.js"></script>
+	<script type="text/javascript" src="js/sceneJS/funciones.js"></script>
+	<script type="text/javascript" src="js/sceneJS/variables.js"></script>
+	<script type="text/javascript" src="js/sceneJS/main.js"></script>
+</body>
+</html>

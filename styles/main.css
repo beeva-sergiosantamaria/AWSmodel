@@ -1,0 +1,169 @@
+@font-face {
+    font-family: bbvaweb;
+    src: url(fuentes/bbvaweb-light.ttf);
+}
+body {
+  font-family: bbvaweb;
+	background-color: #045FB4;
+	/*background-image: url("../images/textures/text5.jpg");*/
+	margin: 0px;
+	overflow: hidden;
+}
+.cajaImagen1 {
+  opacity: 1;
+  position: absolute;
+  left: 30px;
+  top:80px;
+  padding: 10px;
+  transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+}
+
+.infoPostit{
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  height: 350px;
+  width: 400px;
+  padding: 10px;
+  background-color: rgba(11, 23, 38, 0.75);
+}
+.titleMain{
+  background-color: rgb(73, 92, 108);
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  width: 30%;
+  height: 20px;
+  padding: 10px;
+  /* display: inline-block; */
+  border: solid 2px;
+  border-radius: 3px;
+}
+.current {
+  color: white;
+  width: 40%;
+  float: right;
+  font-weight: bold;
+  display: inline-block;
+}
+.title{
+  color:white;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+  height: 20px;
+  padding: 10px;
+}
+.info{
+  padding: 10px;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #fff;
+  color: #fff;
+  shape-rendering: crispEdges;
+}
+
+.y.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1px;
+}
+.infoType{
+  color: white;
+  width: 50%;
+  float: left;
+  font-size: 16px;
+  margin-bottom: 2%;
+}
+.tick{
+  font-size: 5px;
+  color: white;
+}
+.Textline{
+  font-size: 9px;
+  color: white;
+}
+
+.infoToolImageInside{
+  width: 33%;
+  float: left;
+  height: 15px;
+}
+
+.TemperatureHi{
+  background-color: rgb(255, 0, 0);;
+}
+.TemperatureMed{
+  background-color: rgb(255, 128, 0);;
+}
+.TemperatureLow{
+  background-color: rgb(255, 255, 0);
+}
+.HumidifyHi{
+  background-color: rgb(0, 0, 153);
+}
+.HumidifyMed{
+  background-color: rgb(51, 51, 255);
+}
+.HumidifyLow{
+  background-color: rgb(204, 204, 255);
+}
+.LuxHi{
+  background-color: rgb(204, 204, 0);
+}
+.LuxMed{
+  background-color: rgb(255, 255, 102);
+}
+.LuxLow{
+  background-color: rgb(255, 255, 204);
+}
+.PressHi{
+  background-color: rgb(0, 204, 0);
+}
+.PressMed{
+  background-color: rgb(102, 255, 102);
+}
+.PressLow{
+  background-color: rgb(204, 255, 204);
+}
+.valueIndicator{
+  color: rgb(200, 200, 200);
+  font-size: 75px;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  font-family: bbvaweb;
+}
+.hide {
+  opacity: 0;
+  -webkit-transition: all .5s ease-in-out; /* Safari */
+  -o-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+.show {
+  opacity: 1;
+  -webkit-transition: all 2s ease-in-out; /* Safari */
+  -o-transition: all 2s ease-in-out;
+  -moz-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+}
+.advertising{
+  color:white;
+  position: absolute;
+  top: 1%;
+  left: 2%;
+  font-size: 30px;
+  background-color: rgba(11, 23, 38, 0.75);
+  padding: 10px
+}
