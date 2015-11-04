@@ -923,6 +923,40 @@ function moveComunicationLigths(position, origin){
 
 function addUbiqons(){
 
+	 var material = new THREE.LineBasicMaterial({
+        color: 0x99FF99,
+        linewidth: 2,
+        linecap: 'round',
+        transparent: true,
+        opacity: 0.3
+    });
+
+ 	 var geometry = new THREE.Geometry();
+	     geometry.vertices.push(new THREE.Vector3(-53700, 20500, 67200));
+	     geometry.vertices.push(new THREE.Vector3(-52000, 15000, 87000));
+
+	 var geometry2 = new THREE.Geometry();
+	     geometry2.vertices.push(new THREE.Vector3(-54000, 20500, 99500));
+	     geometry2.vertices.push(new THREE.Vector3(-52000, 15000, 87000)); 
+
+	 var geometry3 = new THREE.Geometry();
+	     geometry3.vertices.push(new THREE.Vector3(-18500, 20000, 100000));
+	     geometry3.vertices.push(new THREE.Vector3(-52000, 15000, 87000)); 
+
+	 var geometry4 = new THREE.Geometry();
+	     geometry4.vertices.push(new THREE.Vector3(-18500, 20000, 68500));
+	     geometry4.vertices.push(new THREE.Vector3(-52000, 15000, 87000));   
+
+	 var line = new THREE.Line(geometry, material);
+	 var line2 = new THREE.Line(geometry2, material);
+	 var line3 = new THREE.Line(geometry3, material);
+	 var line4 = new THREE.Line(geometry4, material);
+	 
+	 scene.add(line);
+	 scene.add(line2);
+	 scene.add(line3);
+	 scene.add(line4);
+
 	var spritey = makeTextSprite( 'Ibeacon', 
 			{ 
 				fontsize: 40, 
@@ -945,6 +979,28 @@ function addUbiqons(){
 	spritey.position.set(-54000,21500,97500);
 	scene.add( spritey );
 
+	var spritey = makeTextSprite( 'Ibeacon', 
+			{ 
+				fontsize: 40, 
+				borderColor: {r:255, g:0, b:0, a:0}, 
+				backgroundColor: {r:255, g:255, b:255, a:0}, 
+				color: '#99FF99',
+				scale: { x: 10000, y: 5000 } 
+			});
+	spritey.position.set(-18500,20000,100000);
+	scene.add( spritey );
+
+	var spritey = makeTextSprite( 'Ibeacon', 
+			{ 
+				fontsize: 40, 
+				borderColor: {r:255, g:0, b:0, a:0}, 
+				backgroundColor: {r:255, g:255, b:255, a:0}, 
+				color: '#99FF99',
+				scale: { x: 10000, y: 5000 } 
+			});
+	spritey.position.set(-18500,20000,68500);
+	scene.add( spritey );
+
     var textureX = THREE.ImageUtils.loadTexture( "images/textures/ubiqons.png" );
 
     var spriteMaterial = new THREE.SpriteMaterial( 
@@ -955,7 +1011,7 @@ function addUbiqons(){
 
     scene.add(sprite);
 
-	var ubPositions = [{x: -53700, y: 20500, z: 67200},{x: -54000, y: 20500, z: 99500}];
+	var ubPositions = [{x: -53700, y: 20500, z: 67200},{x: -54000, y: 20500, z: 99500},{x: -18500, y: 20000, z: 100000}, {x: -18500, y: 20000, z: 68500}];
 	for(var a = 0; a<ubPositions.length; a++){
 		    var ubgeometry = new THREE.SphereGeometry( 400, 400, 5 );
 		    var ubmaterial = new THREE.MeshBasicMaterial( { color: '#99FF99' });
@@ -984,15 +1040,33 @@ function addUbiqons(){
 		ubcircunference2.scale.z = 1;
 		scene.add( ubcircunference2 );
 
+		var udcircunference3 = new THREE.Mesh( new THREE.RingGeometry( 95, 100, 30, 1, 0, Math.PI * 2 ), material1 );
+
+		udcircunference3.position.set(-18500,20500,100000);
+		udcircunference3.rotation.x = (3*Math.PI)/2;
+		udcircunference3.scale.x = 1;
+		udcircunference3.scale.y = 1;
+		udcircunference3.scale.z = 1;
+		scene.add( udcircunference3 );
+
+		var ubcircunference4 = new THREE.Mesh( new THREE.RingGeometry( 95, 100, 30, 1, 0, Math.PI * 2 ), material1 );
+
+		ubcircunference4.position.set(-18500,20500,68500 );
+		ubcircunference4.rotation.x = (3*Math.PI)/2;
+		ubcircunference4.scale.x = 1;
+		ubcircunference4.scale.y = 1;
+		ubcircunference4.scale.z = 1;
+		scene.add( ubcircunference4 );
+
 		setInterval(function() {
 			    udcircunference1.scale.set(1,1,1);
 				ubcircunference2.scale.set(1,1,1);
-				//circunference3.scale.set(1,1,1);
-				//circunference4.scale.set(1,1,1);
+				ubcircunference3.scale.set(1,1,1);
+				ubcircunference4.scale.set(1,1,1);
 			    var scaleValue = 120;
 			    movement(scaleValue,scaleValue,1, udcircunference1.scale, 0, 500);
 			    movement(scaleValue,scaleValue,1, ubcircunference2.scale, 0, 500);
-			    //movement(scaleValue,scaleValue,1, circunference3.scale, 0, 1000);
-				//movement(scaleValue,scaleValue,1, circunference4.scale, 0, 1000);
+			    movement(scaleValue,scaleValue,1, ubcircunference3.scale, 0, 500);
+				movement(scaleValue,scaleValue,1, ubcircunference4.scale, 0, 500);
 			 }, 500);	
 }
