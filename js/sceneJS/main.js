@@ -70,7 +70,8 @@ function init() {
     addCloud();
     addAmbient();
     addUbiqons();
-    addLights();3
+    addLights();
+    createACtionZones();
 
     //------HUMAN MODEL --------------
 
@@ -189,15 +190,15 @@ function update()
     if ( keyboard.pressed("space") ) { video.pause(); }//pause video
     if ( keyboard.pressed("s") )     { video.pause(); video.currentTime = 0; }//stop video    
     if ( keyboard.pressed("r") )     { video.currentTime = 0; }//rewind video
-    if ( keyboard.pressed("0") )     { step(0); generaInterval=0; }//GENERAL VIEW    
-    if ( keyboard.pressed("1") )     { step(1); generaInterval=1; }//MOVE TO SENSOR 01
-    if ( keyboard.pressed("2") )     { step(2); generaInterval=2; }//MOVE TO SENSOR 04
-    if ( keyboard.pressed("3") )     { step(3); generaInterval=3; }//HALL PANORAMIC 
-    if ( keyboard.pressed("4") )     { step(4); generaInterval=4; }//RASP
-    if ( keyboard.pressed("5") )     { step(5); generaInterval=5; }//COMUNICATION   
-    if ( keyboard.pressed("6") )     { step(6); generaInterval=6; } //RASP 2  
-    if ( keyboard.pressed("7") )     { step(7); generaInterval=7;}//CLOUD PANORAMIC  
-    if ( keyboard.pressed("8") )     { step(8); generaInterval=8;}//HUMAN  
+    if ( keyboard.pressed("0") )     { step(0); currentVideoStep=0; }//GENERAL VIEW    
+    if ( keyboard.pressed("1") )     { step(1); currentVideoStep=1; }//MOVE TO SENSOR 01
+    if ( keyboard.pressed("2") )     { step(2); currentVideoStep=2; }//MOVE TO SENSOR 04
+    if ( keyboard.pressed("3") )     { step(3); currentVideoStep=3; }//HALL PANORAMIC 
+    if ( keyboard.pressed("4") )     { step(4); currentVideoStep=4; }//RASP
+    if ( keyboard.pressed("5") )     { step(5); currentVideoStep=5; }//COMUNICATION   
+    if ( keyboard.pressed("6") )     { step(6); currentVideoStep=6; } //RASP 2  
+    if ( keyboard.pressed("7") )     { step(7); currentVideoStep=7;}//CLOUD PANORAMIC  
+    if ( keyboard.pressed("8") )     { step(8); currentVideoStep=8;}//HUMAN  
     if ( keyboard.pressed("9") )     { step(13); }//TV   
 
     /*if ( keyboard.pressed("2") )
@@ -242,13 +243,7 @@ function step(num){
                 video.pause();
                 break;
             case 1:
-                removeIndicatorsValues()
-                var leters = [
-                   {x: -20500,y: 9500,z: 100000, text: 'BlueTooth', color: '#6666FF', bgColor: {r:255, g:100, b:100, a:0},  scale:{ x: 4000, y: 2000 }, fontSize: 40},
-                    {x: -20500,y: 7500,z: 99000, text: 'simpleLink SensorTag', color: '#ff6666', bgColor: {r:255, g:100, b:100, a:0},  scale:{ x: 3700, y: 2200 }, fontSize: 28}
-                ]
-                RemoveLetters();
-                legendSystem(leters);          
+                removeIndicatorsValues();    
                 if(myTimersetInterval != 0) clearInterval(myTimersetInterval);
                 var current = currentDate();
                 deleteSensor();
@@ -287,13 +282,6 @@ function step(num){
                 break;
             case 4:
                 removeIndicatorsValues()
-                var leters = [
-                    {x: -20500,y: 4700,z: 108000, text: '    Raspberry PI   ', color: '#cccccc', bgColor: {r:200, g:70, b:70, a:0.8},  scale:{ x: 4000, y: 2000 }, fontSize: 35},
-                    {x: -20500,y: 2600,z: 108000, text: '    Resin.IO           ', color: '#cccccc', bgColor: {r:70, g:70, b:70, a:0.5},  scale:{ x: 4000, y: 2000 }, fontSize: 35},
-                    {x: -20500,y: 3300,z: 108000, text: '    AWS IoT           ', color: '#cccccc', bgColor: {r:70, g:70, b:70, a:0.5},  scale:{ x: 4000, y: 2000 }, fontSize: 35},
-                    {x: -20500,y: 4000,z: 108000, text: '    Device SDK    ', color: '#cccccc', bgColor: {r:70, g:70, b:70, a:0.5},  scale:{ x: 4000, y: 2000 }, fontSize: 35}
-                ]
-                legendSystem(leters);
                 if(!scene.getObjectByName( "visor" )) setTimeout(lookVisor({x: -18500,y: 5000,z: 105000}, (3*Math.PI)/2), 4000);
                 else  { scene.getObjectByName( "visor" ).position.set(-18500,5000,105000); scene.getObjectByName( "visor" ).rotation.y = (3*Math.PI)/2;}
                 if(myTimersetInterval != 0) clearInterval(myTimersetInterval);
@@ -316,13 +304,6 @@ function step(num){
                 break; 
             case 6:
                 removeIndicatorsValues()
-                var leters = [
-                    {x: -20500,y: 4700,z: 108000, text: '    Raspberry PI   ', color: '#cccccc', bgColor: {r:200, g:70, b:70, a:0.8},  scale:{ x: 4000, y: 2000 }, fontSize: 35},
-                    {x: -20500,y: 2600,z: 108000, text: '    Resin.IO           ', color: '#cccccc', bgColor: {r:70, g:70, b:70, a:0.5},  scale:{ x: 4000, y: 2000 }, fontSize: 35},
-                    {x: -20500,y: 3300,z: 108000, text: '    AWS IoT           ', color: '#cccccc', bgColor: {r:70, g:70, b:70, a:0.5},  scale:{ x: 4000, y: 2000 }, fontSize: 35},
-                    {x: -20500,y: 4000,z: 108000, text: '    Device SDK    ', color: '#cccccc', bgColor: {r:70, g:70, b:70, a:0.5},  scale:{ x: 4000, y: 2000 }, fontSize: 35}
-                ]
-                legendSystem(leters);   
                 if(!scene.getObjectByName( "visor" )) setTimeout(lookVisor({x: -18500,y: 5000,z: 105000}, (3*Math.PI)/2), 4000);
                 else  { scene.getObjectByName( "visor" ).position.set(-18500,5000,105000); scene.getObjectByName( "visor" ).rotation.y = (3*Math.PI)/2;}
                 if(myTimersetInterval != 0) clearInterval(myTimersetInterval);
@@ -337,9 +318,9 @@ function step(num){
                 var leters = [
                    {x: -50000,y: 295000,z: 488000, text: 'MQTT protocol', color: '#6666ff', bgColor: {r:255, g:100, b:100, a:0}, scale:{ x: 8000, y: 4000}, fontSize: 40 },
                    {x: -50000,y: 287000,z: 488000, text: 'MQTT protocol', color: '#6666ff', bgColor: {r:255, g:100, b:100, a:0},  scale:{ x: 8000, y: 4000 }, fontSize: 40},
-                   {x: -50000,y: 280000,z: 530000, text: '((  API REST  ))', color: '#FFFF66', bgColor: {r:255, g:100, b:100, a:0},  scale:{ x: 20000, y: 10000 }, fontSize: 40},
+                   {x: -50000,y: 286000,z: 528000, text: '((  API REST  ))', color: '#FFFF66', bgColor: {r:255, g:100, b:100, a:0},  scale:{ x: 4000, y: 2000 }, fontSize: 40},
                    {x: -50000,y: 285000,z: 500000, text: 'Device Shadow', color: '#66FF99', bgColor: {r:255, g:100, b:100, a:0},  scale:{ x: 8000, y: 4000 }, fontSize: 40},
-                   {x: -50000,y: 299000,z: 515000, text: 'INSERT', color: '#FF9966', bgColor: {r:255, g:100, b:100, a:0},  scale:{ x: 8000, y: 4000 }, fontSize: 40}
+                   {x: -49000,y: 299000,z: 515000, text: 'INSERT', color: '#FF9966', bgColor: {r:255, g:100, b:100, a:0},  scale:{ x: 8000, y: 4000 }, fontSize: 40}
                 ]
                 RemoveLetters();
                 legendSystem(leters); 
@@ -372,8 +353,8 @@ function step(num){
         }
 }
 
-generaInterval = setInterval(function() {
+/*generaInterval = setInterval(function() {
                     step(currentVideoStep);
                     if(currentVideoStep<8) currentVideoStep = currentVideoStep + 1;
                     else currentVideoStep = 0;
-                 }, 20000);
+                 }, 20000);*/

@@ -138,24 +138,6 @@ function addInfo(){
     $("#infoPostit").removeClass('fadeOutUpBig');
     $("#infoPostit").addClass('fadeInDownBig');
 }
-function deleteSensor(){
-    if(zoneGroup){
-        for(var i = 0;i<zoneGroup.children.length; i++){
-            var tween = new TWEEN.Tween(zoneGroup.children[i].scale).to({
-                    x: 0,
-                    y: 0,
-                    z: 0
-            },500).easing(TWEEN.Easing.Sinusoidal.InOut).onUpdate(function () {
-          }).delay(0).start();
-        }
-    }
-    //setTimeout(scene.remove(zoneGroup), 3000); 
-    //scene.remove(zoneGroup);
-    scene.remove(circunference1);
-    scene.remove(circunference2);
-    scene.remove(circunference3);
-    scene.remove(circunference4);
-}
 function currentDate(){
     var d = new Date();
 
@@ -179,4 +161,22 @@ function RemoveLetters(){
 function removeIndicatorsValues(){
     $(".valueIndicator").removeClass('show')
     $(".valueIndicator").addClass('hide');
+}
+function deleteSensor(){
+    if(zoneGroup){
+        for(var i = 0;i<zoneGroup.children.length; i++){
+            var tween = new TWEEN.Tween(zoneGroup.children[i].scale).to({
+                    x: 0,
+                    y: 0,
+                    z: 0
+            },500).easing(TWEEN.Easing.Sinusoidal.InOut).onUpdate(function () {
+          }).delay(0).start();
+        }
+    }
+    //setTimeout(scene.remove(zoneGroup), 3000); 
+    //scene.remove(zoneGroup);
+    scene.remove(circunference1);
+    scene.remove(circunference2);
+    scene.remove(circunference3);
+    scene.remove(circunference4);
 }

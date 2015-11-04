@@ -122,6 +122,38 @@ function addSensors(group){
 	    	rasp.position.set(-18500,5000,105000);
 	    group.add(rasp);
 
+	 var geometryRasp = new THREE.BoxGeometry( 1, 4000, 5000 );
+	    //var materialRasp = new THREE.MeshLambertMaterial( {color: 0Xdbdbdb, ambient: 0x000000, emissive: 0Xdbdbdb,specular: 0x000000} );
+	    var materialRaspArray = [];
+			materialRaspArray.push(new THREE.MeshLambertMaterial( { color: 0Xdbdbdb, ambient: 0x000000, emissive: 0Xdbdbdb,specular: 0x000000 } ));
+			materialRaspArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/textures/raspinfo.png' ), transparent: true, opacity: 0.7, color: 0x9999FF }));
+			materialRaspArray.push(new THREE.MeshLambertMaterial( { color: 0Xdbdbdb, ambient: 0x000000, emissive: 0Xdbdbdb,specular: 0x000000 } ));
+			materialRaspArray.push(new THREE.MeshLambertMaterial( { color: 0Xdbdbdb, ambient: 0x000000, emissive: 0Xdbdbdb,specular: 0x000000 } ));
+			materialRaspArray.push(new THREE.MeshLambertMaterial( { color: 0Xdbdbdb, ambient: 0x000000, emissive: 0Xdbdbdb,specular: 0x000000 } ));
+			materialRaspArray.push(new THREE.MeshLambertMaterial( { color: 0Xdbdbdb, ambient: 0x000000, emissive: 0Xdbdbdb,specular: 0x000000 } ));
+
+		var materialRasp = new THREE.MeshFaceMaterial(materialRaspArray);
+			
+	    var rasp = new THREE.Mesh( geometryRasp, materialRasp );
+	    	rasp.position.set(-19500,4300,108600);
+	    group.add(rasp);
+
+	    var geometryRasp = new THREE.BoxGeometry( 1, 2000, 4000 );
+	    //var materialRasp = new THREE.MeshLambertMaterial( {color: 0Xdbdbdb, ambient: 0x000000, emissive: 0Xdbdbdb,specular: 0x000000} );
+	    var materialRaspArray = [];
+			materialRaspArray.push(new THREE.MeshLambertMaterial( { color: 0Xdbdbdb, ambient: 0x000000, emissive: 0Xdbdbdb,specular: 0x000000 } ));
+			materialRaspArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/textures/simplelink.png' ), transparent: true, opacity: 0.7, color: 0x9999FF }));
+			materialRaspArray.push(new THREE.MeshLambertMaterial( { color: 0Xdbdbdb, ambient: 0x000000, emissive: 0Xdbdbdb,specular: 0x000000 } ));
+			materialRaspArray.push(new THREE.MeshLambertMaterial( { color: 0Xdbdbdb, ambient: 0x000000, emissive: 0Xdbdbdb,specular: 0x000000 } ));
+			materialRaspArray.push(new THREE.MeshLambertMaterial( { color: 0Xdbdbdb, ambient: 0x000000, emissive: 0Xdbdbdb,specular: 0x000000 } ));
+			materialRaspArray.push(new THREE.MeshLambertMaterial( { color: 0Xdbdbdb, ambient: 0x000000, emissive: 0Xdbdbdb,specular: 0x000000 } ));
+
+		var materialRasp = new THREE.MeshFaceMaterial(materialRaspArray);
+			
+	    var rasp = new THREE.Mesh( geometryRasp, materialRasp );
+	    	rasp.position.set(-19500,11000,100200);
+	    group.add(rasp);   
+
 	var positions = [{x: -18500,y: 9000,z: 100000},
 					 /*{x: 9000, y: 2000,z: 36000},
 					 {x: 20000,y: 2000,z: 23500},
@@ -164,14 +196,27 @@ function addSensors(group){
 	}
  };
 
- function addCloud(){
+ function addCloud(){  
 
- 	/*var cubitoGeo = new THREE.BoxGeometry(1000,1000,1000);
- 	var cubitomaterial = new THREE.MeshBasicMaterial({color: 0xFFFFFF})
+ 	var textureX = THREE.ImageUtils.loadTexture( "images/textures/smartTV.png" );
 
- 	var cubito = new THREE.Mesh(cubitoGeo, cubitomaterial);
- 	cubito.position.set(-50000, 290000, 600000);
- 	scene.add(cubito);*/
+    var spriteMaterial = new THREE.SpriteMaterial( 
+        { map: textureX } );
+    var sprite = new THREE.Sprite( spriteMaterial );
+    sprite.scale.set(6000,4000,4.0);
+    sprite.position.set(-50000,283000,527800)
+
+    scene.add(sprite);
+
+    var textureX = THREE.ImageUtils.loadTexture( "images/textures/Mobile-Smartphone.png" );
+
+    var spriteMaterial = new THREE.SpriteMaterial( 
+        { map: textureX } );
+    var sprite = new THREE.Sprite( spriteMaterial );
+    sprite.scale.set(4000,4000,4.0);
+    sprite.position.set(-50000,283000,533000)
+
+    scene.add(sprite);
 
  	var light = new THREE.PointLight( 0xffffff, 1 , 300000);
 	    light.position.set(-50000, 290000, 600000);
@@ -277,7 +322,7 @@ function addHumanlineas() {
         { map: textureGlass } );
     var spriteGlass = new THREE.Sprite( spriteMaterialGlass );
     	spriteGlass.scale.set(1000,500,4.0);
-    	spriteGlass.position.set(-52000,4000,88000)
+    	spriteGlass.position.set(-51500,4000,88000)
 
     scene.add(spriteGlass);
 
@@ -287,7 +332,7 @@ function addHumanlineas() {
         { map: textureWatch } );
     var spriteWatch = new THREE.Sprite( spriteMaterialWatch );
     	spriteWatch.scale.set(1000,800,4.0);
-    	spriteWatch.position.set(-52000,3000,85000)
+    	spriteWatch.position.set(-51500,3000,85000)
 
     scene.add(spriteWatch);
 
@@ -639,9 +684,7 @@ function lookVisor(position, rotation){
 	}
 }
 
-
-
-function sensorZoneAction(){
+function createACtionZones(){
 
 	var positions = [{x: -18500,y: 2000,z: 100000},
 					 {x: -18500,y: 2500,z: 68500},
@@ -652,8 +695,6 @@ function sensorZoneAction(){
 	var zoneColors = [{r: 1,g: 0.5,b: 0.5},{r: 0.5,g: 0.5,b: 1},{r: 1,g: 1,b: 0.5},{r: 0.5,g: 1,b: 0.5}];				 
 
 	var numSensors = positions.length;
-
-	if(!zoneGroup){
 
 		console.log('Creatin zone group');
 
@@ -678,7 +719,24 @@ function sensorZoneAction(){
 
 		    zoneGroup.add(sensorZone);
 		}
+
 		scene.add(zoneGroup);
+}
+
+function sensorZoneAction(){
+
+	var positions = [{x: -18500,y: 2000,z: 100000},
+					 {x: -18500,y: 2500,z: 68500},
+					 {x: -52000,y: 3000,z: 99700},
+					 {x: -51500,y: 3500,z: 67200}];
+
+	//var zoneColors = ['#ff6666','#6666ff','#ffff66','#66ff66'];	
+	var zoneColors = [{r: 1,g: 0.5,b: 0.5},{r: 0.5,g: 0.5,b: 1},{r: 1,g: 1,b: 0.5},{r: 0.5,g: 1,b: 0.5}];				 
+
+	var numSensors = positions.length;
+
+		console.log('Creatin zone group');
+
 		var material1 = new THREE.MeshBasicMaterial(  { color: 0xAAAAAA, transparent: true, opacity: 1 } );
 
 		circunference1 = new THREE.Mesh( new THREE.RingGeometry( 95, 100, 30, 1, (Math.PI)/2,  Math.PI ), material1 );
@@ -759,7 +817,6 @@ function sensorZoneAction(){
 				if(colorCount<3) colorCount = colorCount +1;
 				else colorCount = 0;
 			 }, 6500);
-	}
 	/*else {
 		 for(var i = 0;i<zoneGroup.children.length; i++){
             var tween = new TWEEN.Tween(zoneGroup.children[i].scale).to({
@@ -871,10 +928,21 @@ function addUbiqons(){
 				fontsize: 40, 
 				borderColor: {r:255, g:0, b:0, a:0}, 
 				backgroundColor: {r:255, g:255, b:255, a:0}, 
-				color: '#55FF55',
-				scale: 4000 
+				color: '#99FF99',
+				scale: { x: 10000, y: 5000 } 
 			});
-	spritey.position.set(-53700,21500,67200);
+	spritey.position.set(-53700,21500,65200);
+	scene.add( spritey );
+
+	var spritey = makeTextSprite( 'Ibeacon', 
+			{ 
+				fontsize: 40, 
+				borderColor: {r:255, g:0, b:0, a:0}, 
+				backgroundColor: {r:255, g:255, b:255, a:0}, 
+				color: '#99FF99',
+				scale: { x: 10000, y: 5000 } 
+			});
+	spritey.position.set(-54000,21500,97500);
 	scene.add( spritey );
 
     var textureX = THREE.ImageUtils.loadTexture( "images/textures/ubiqons.png" );
@@ -887,30 +955,10 @@ function addUbiqons(){
 
     scene.add(sprite);
 
-    /*var textureX = THREE.ImageUtils.loadTexture( "images/textures/ibeacon.png" );
-
-    var spriteMaterial = new THREE.SpriteMaterial( 
-        { map: textureX } );
-    var sprite = new THREE.Sprite( spriteMaterial );
-    sprite.scale.set(4000,3000,4.0);
-    sprite.position.set(-53700,21500,67200)
-
-    scene.add(sprite);*/
-
-    /*var textureX = THREE.ImageUtils.loadTexture( "images/textures/ibeacon.png" );
-
-    var spriteMaterial = new THREE.SpriteMaterial( 
-        { map: textureX } );
-    var sprite = new THREE.Sprite( spriteMaterial );
-    sprite.scale.set(4000,3000,4.0);
-    sprite.position.set(-54000,21500,99500);
-
-    scene.add(sprite);*/
-
 	var ubPositions = [{x: -53700, y: 20500, z: 67200},{x: -54000, y: 20500, z: 99500}];
 	for(var a = 0; a<ubPositions.length; a++){
 		    var ubgeometry = new THREE.SphereGeometry( 400, 400, 5 );
-		    var ubmaterial = new THREE.MeshBasicMaterial( { color: '#FFFFFF' });
+		    var ubmaterial = new THREE.MeshBasicMaterial( { color: '#99FF99' });
 		    var ubsphere = new THREE.Mesh( ubgeometry, ubmaterial );
 		    ubsphere.position.set(ubPositions[a].x, ubPositions[a].y, ubPositions[a].z);
 		  scene.add(ubsphere);  
