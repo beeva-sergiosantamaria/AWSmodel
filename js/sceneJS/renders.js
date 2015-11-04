@@ -924,7 +924,7 @@ function moveComunicationLigths(position, origin){
 function addUbiqons(){
 
 	 var material = new THREE.LineBasicMaterial({
-        color: 0x99FF99,
+        color: 0x33cc33,
         linewidth: 2,
         linecap: 'round',
         transparent: true,
@@ -932,19 +932,19 @@ function addUbiqons(){
     });
 
  	 var geometry = new THREE.Geometry();
-	     geometry.vertices.push(new THREE.Vector3(-53700, 20500, 67200));
+	     geometry.vertices.push(new THREE.Vector3(-52000, 11000, 67200));
 	     geometry.vertices.push(new THREE.Vector3(-52000, 15000, 87000));
 
 	 var geometry2 = new THREE.Geometry();
-	     geometry2.vertices.push(new THREE.Vector3(-54000, 20500, 99500));
+	     geometry2.vertices.push(new THREE.Vector3(-52000, 11000, 99500));
 	     geometry2.vertices.push(new THREE.Vector3(-52000, 15000, 87000)); 
 
 	 var geometry3 = new THREE.Geometry();
-	     geometry3.vertices.push(new THREE.Vector3(-18500, 20000, 100000));
+	     geometry3.vertices.push(new THREE.Vector3(-19500, 13000, 100000));
 	     geometry3.vertices.push(new THREE.Vector3(-52000, 15000, 87000)); 
 
 	 var geometry4 = new THREE.Geometry();
-	     geometry4.vertices.push(new THREE.Vector3(-18500, 20000, 68500));
+	     geometry4.vertices.push(new THREE.Vector3(-19500, 11000, 68500));
 	     geometry4.vertices.push(new THREE.Vector3(-52000, 15000, 87000));   
 
 	 var line = new THREE.Line(geometry, material);
@@ -962,10 +962,10 @@ function addUbiqons(){
 				fontsize: 40, 
 				borderColor: {r:255, g:0, b:0, a:0}, 
 				backgroundColor: {r:255, g:255, b:255, a:0}, 
-				color: '#99FF99',
-				scale: { x: 10000, y: 5000 } 
+				color: '#33cc33',
+				scale: { x: 6000, y: 3000 } 
 			});
-	spritey.position.set(-53700,21500,65200);
+	spritey.position.set(-50000,11000,65200);
 	scene.add( spritey );
 
 	var spritey = makeTextSprite( 'Ibeacon', 
@@ -973,10 +973,10 @@ function addUbiqons(){
 				fontsize: 40, 
 				borderColor: {r:255, g:0, b:0, a:0}, 
 				backgroundColor: {r:255, g:255, b:255, a:0}, 
-				color: '#99FF99',
-				scale: { x: 10000, y: 5000 } 
+				color: '#33cc33',
+				scale: { x: 6000, y: 3000 } 
 			});
-	spritey.position.set(-54000,21500,97500);
+	spritey.position.set(-50000,11000,97500);
 	scene.add( spritey );
 
 	var spritey = makeTextSprite( 'Ibeacon', 
@@ -984,10 +984,10 @@ function addUbiqons(){
 				fontsize: 40, 
 				borderColor: {r:255, g:0, b:0, a:0}, 
 				backgroundColor: {r:255, g:255, b:255, a:0}, 
-				color: '#99FF99',
-				scale: { x: 10000, y: 5000 } 
+				color: '#33cc33',
+				scale: {  x: 6000, y: 3000 } 
 			});
-	spritey.position.set(-18500,20000,100000);
+	spritey.position.set(-20500,13000,100000);
 	scene.add( spritey );
 
 	var spritey = makeTextSprite( 'Ibeacon', 
@@ -995,10 +995,10 @@ function addUbiqons(){
 				fontsize: 40, 
 				borderColor: {r:255, g:0, b:0, a:0}, 
 				backgroundColor: {r:255, g:255, b:255, a:0}, 
-				color: '#99FF99',
-				scale: { x: 10000, y: 5000 } 
+				color: '#33cc33',
+				scale: {  x: 6000, y: 3000 } 
 			});
-	spritey.position.set(-18500,20000,68500);
+	spritey.position.set(-20500,11000,68500);
 	scene.add( spritey );
 
     var textureX = THREE.ImageUtils.loadTexture( "images/textures/ubiqons.png" );
@@ -1011,10 +1011,10 @@ function addUbiqons(){
 
     scene.add(sprite);
 
-	var ubPositions = [{x: -53700, y: 20500, z: 67200},{x: -54000, y: 20500, z: 99500},{x: -18500, y: 20000, z: 100000}, {x: -18500, y: 20000, z: 68500}];
+	var ubPositions = [{x: -52000, y: 11000, z: 67200},{x: -52000, y: 11000, z: 99500},{x: -19500, y: 13000, z: 100000}, {x: -19500, y: 11000, z: 68500}];
 	for(var a = 0; a<ubPositions.length; a++){
 		    var ubgeometry = new THREE.SphereGeometry( 400, 400, 5 );
-		    var ubmaterial = new THREE.MeshBasicMaterial( { color: '#99FF99' });
+		    var ubmaterial = new THREE.MeshBasicMaterial( { color: '#338855' });
 		    var ubsphere = new THREE.Mesh( ubgeometry, ubmaterial );
 		    ubsphere.position.set(ubPositions[a].x, ubPositions[a].y, ubPositions[a].z);
 		  scene.add(ubsphere);  
@@ -1022,36 +1022,36 @@ function addUbiqons(){
 
 	var material1 = new THREE.MeshBasicMaterial(  { color: 0xAAAAAA, transparent: true, opacity: 0.6 } );
 
-		var udcircunference1 = new THREE.Mesh( new THREE.RingGeometry( 95, 100, 30, 1, 0, Math.PI * 2 ), material1 );
+		var ubcircunference1 = new THREE.Mesh( new THREE.RingGeometry( 95, 100, 30, 1, 0, Math.PI * 2 ), material1 );
 
-		udcircunference1.position.set(-54000,20500,99500);
-		udcircunference1.rotation.x = (3*Math.PI)/2;
-		udcircunference1.scale.x = 1;
-		udcircunference1.scale.y = 1;
-		udcircunference1.scale.z = 1;
-		scene.add( udcircunference1 );
+		ubcircunference1.position.set(-52000,12000,99500);
+		ubcircunference1.rotation.x = (3*Math.PI)/2;
+		ubcircunference1.scale.x = 1;
+		ubcircunference1.scale.y = 1;
+		ubcircunference1.scale.z = 1;
+		scene.add( ubcircunference1 );
 
 		var ubcircunference2 = new THREE.Mesh( new THREE.RingGeometry( 95, 100, 30, 1, 0, Math.PI * 2 ), material1 );
 
-		ubcircunference2.position.set(-53700, 21000, 67200 );
+		ubcircunference2.position.set(-52000, 12000, 67200 );
 		ubcircunference2.rotation.x = (3*Math.PI)/2;
 		ubcircunference2.scale.x = 1;
 		ubcircunference2.scale.y = 1;
 		ubcircunference2.scale.z = 1;
 		scene.add( ubcircunference2 );
 
-		var udcircunference3 = new THREE.Mesh( new THREE.RingGeometry( 95, 100, 30, 1, 0, Math.PI * 2 ), material1 );
+		var ubcircunference3 = new THREE.Mesh( new THREE.RingGeometry( 95, 100, 30, 1, 0, Math.PI * 2 ), material1 );
 
-		udcircunference3.position.set(-18500,20500,100000);
-		udcircunference3.rotation.x = (3*Math.PI)/2;
-		udcircunference3.scale.x = 1;
-		udcircunference3.scale.y = 1;
-		udcircunference3.scale.z = 1;
-		scene.add( udcircunference3 );
+		ubcircunference3.position.set(-19500,13000,100000);
+		ubcircunference3.rotation.x = (3*Math.PI)/2;
+		ubcircunference3.scale.x = 1;
+		ubcircunference3.scale.y = 1;
+		ubcircunference3.scale.z = 1;
+		scene.add( ubcircunference3 );
 
 		var ubcircunference4 = new THREE.Mesh( new THREE.RingGeometry( 95, 100, 30, 1, 0, Math.PI * 2 ), material1 );
 
-		ubcircunference4.position.set(-18500,20500,68500 );
+		ubcircunference4.position.set(-19500,12000,68500 );
 		ubcircunference4.rotation.x = (3*Math.PI)/2;
 		ubcircunference4.scale.x = 1;
 		ubcircunference4.scale.y = 1;
@@ -1059,12 +1059,12 @@ function addUbiqons(){
 		scene.add( ubcircunference4 );
 
 		setInterval(function() {
-			    udcircunference1.scale.set(1,1,1);
+			    ubcircunference1.scale.set(1,1,1);
 				ubcircunference2.scale.set(1,1,1);
 				ubcircunference3.scale.set(1,1,1);
 				ubcircunference4.scale.set(1,1,1);
 			    var scaleValue = 120;
-			    movement(scaleValue,scaleValue,1, udcircunference1.scale, 0, 500);
+			    movement(scaleValue,scaleValue,1, ubcircunference1.scale, 0, 500);
 			    movement(scaleValue,scaleValue,1, ubcircunference2.scale, 0, 500);
 			    movement(scaleValue,scaleValue,1, ubcircunference3.scale, 0, 500);
 				movement(scaleValue,scaleValue,1, ubcircunference4.scale, 0, 500);
