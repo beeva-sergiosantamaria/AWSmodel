@@ -353,8 +353,8 @@ function step(num){
         }
 }
 
-/*generaInterval = setInterval(function() {
+generaInterval = setInterval(function() {
                     step(currentVideoStep);
                     if(currentVideoStep<8) currentVideoStep = currentVideoStep + 1;
                     else currentVideoStep = 0;
-                 }, 20000);*/
+                 }, 20000);
