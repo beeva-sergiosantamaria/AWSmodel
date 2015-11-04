@@ -126,7 +126,7 @@ function addSensors(group){
 	    //var materialRasp = new THREE.MeshLambertMaterial( {color: 0Xdbdbdb, ambient: 0x000000, emissive: 0Xdbdbdb,specular: 0x000000} );
 	    var materialRaspArray = [];
 			materialRaspArray.push(new THREE.MeshLambertMaterial( { color: 0Xdbdbdb, ambient: 0x000000, emissive: 0Xdbdbdb,specular: 0x000000 } ));
-			materialRaspArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/textures/raspinfo.png' ), transparent: true, opacity: 0.7, color: 0x9999FF }));
+			materialRaspArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/textures/raspInfo.png' ), transparent: true, opacity: 0.7, color: 0x9999FF }));
 			materialRaspArray.push(new THREE.MeshLambertMaterial( { color: 0Xdbdbdb, ambient: 0x000000, emissive: 0Xdbdbdb,specular: 0x000000 } ));
 			materialRaspArray.push(new THREE.MeshLambertMaterial( { color: 0Xdbdbdb, ambient: 0x000000, emissive: 0Xdbdbdb,specular: 0x000000 } ));
 			materialRaspArray.push(new THREE.MeshLambertMaterial( { color: 0Xdbdbdb, ambient: 0x000000, emissive: 0Xdbdbdb,specular: 0x000000 } ));
