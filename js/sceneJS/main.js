@@ -276,7 +276,7 @@ function step(num){
                 break;
             case 3:
                 deleteInfoHuman();
-                removeIndicatorsValues()
+                removeIndicatorsValues();
                 if(myTimersetInterval != 0) clearInterval(myTimersetInterval);
                 setTimeout(deleteInfo, 0); 
                 movement(-32000,0,97000, controls.target, 0);
@@ -296,11 +296,11 @@ function step(num){
                 break;
             case 5:
                 deleteInfoHuman();
-                removeIndicatorsValues()
+                removeIndicatorsValues();
+                setTimeout(deleteInfo, 0); 
                 if(myTimersetInterval != 0) clearInterval(myTimersetInterval);  
                 movement(-32000,0,97000, controls.target, 0);
                 movement(-34000,10900,110000, camera.position, 100, 1000);
-                deleteSensor();
                 setTimeout(function(){moveComunicationLigths({x: -18500,y: 5000,z: 105000},{x: -53000,y: 9000,z: 67200})}, 1500);
                 myTimersetInterval = setInterval(function() {
                     setTimeout(function(){moveComunicationLigths({x: -18500,y: 5000,z: 105000},{x: -53000,y: 9000,z: 67200})}, 1000);
@@ -320,6 +320,7 @@ function step(num){
             case 7:
                 deleteInfoHuman();
                 removeIndicatorsValues();
+                setTimeout(deleteInfo, 0); 
                 var leters = [
                    {x: -50000,y: 295000,z: 488000, text: 'MQTT protocol', color: '#6666ff', bgColor: {r:255, g:100, b:100, a:0}, scale:{ x: 8000, y: 4000}, fontSize: 40 },
                    {x: -50000,y: 287000,z: 488000, text: 'MQTT protocol', color: '#6666ff', bgColor: {r:255, g:100, b:100, a:0},  scale:{ x: 8000, y: 4000 }, fontSize: 40},
@@ -334,7 +335,6 @@ function step(num){
                 if(myTimersetInterval != 0) clearInterval(myTimersetInterval);
                 movement(-39000, 295000,513500, controls.target, 0);
                 movement(-37000, 295000,513500, camera.position, 100, 2000);
-                deleteSensor();
                 deleteSensor();
                 setTimeout(moveComunicationLigths({x: -50000,y: 300000,z: 500000}), 0);
 
