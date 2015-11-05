@@ -42,6 +42,8 @@ function addGeoObject ( group, svgObject, amt, altura, name ) {
 	for(var e = 0; e<2;e++){
 		var cubeGeom = new THREE.BoxGeometry(columnDimension[e].x, columnDimension[e].y, columnDimension[e].z, 1, 1, 1);
 	    var mirrorCubeMaterial = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture( 'images/textures/metal-texture.jpg' ),color: 0xbdbdbd, ambient: 0xbdbdbd, emissive: 0Xccccff,specular: 0xbdbdbd } );
+			mirrorCubeMaterial.magFilter = THREE.Linear;
+			mirrorCubeMaterial.minFilter = THREE.Linear;
     		mirrorCube = new THREE.Mesh( cubeGeom, mirrorCubeMaterial );
     		mirrorCube.position.set(columnPosition[e].x, columnPosition[e].y, columnPosition[e].z);
     		mirrorCube.castShadow = true;
@@ -51,6 +53,8 @@ function addGeoObject ( group, svgObject, amt, altura, name ) {
 	for(var a = 0; a<3; a++){
 		var cubeGeom = new THREE.BoxGeometry(wallDimension[a].x, wallDimension[a].y, wallDimension[a].z, 1, 1, 1);
 	    var mirrorCubeMaterial = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture( 'images/textures/muro.jpg' ),color: 0Xffffff, ambient: 0xbdbdbd, emissive: 0Xffffff,specular: 0xbdbdbd } );
+	    mirrorCubeMaterial.magFilter = THREE.Linear;
+		mirrorCubeMaterial.minFilter = THREE.Linear;
 	    mirrorCube = new THREE.Mesh( cubeGeom, mirrorCubeMaterial );
 	    mirrorCube.position.set(wallPosition[a].x, wallPosition[a].y, wallPosition[a].z);
 	    group.add(mirrorCube);
@@ -513,7 +517,10 @@ function addAmbient(){
 
 	 var buildingGroup = new THREE.Group();
 
+	 
 	 var materialPlaneExtend = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture( 'images/textures/mapa4.png' ),color: 0xbdbdbd, ambient: 0xbdbdbd, emissive: 0Xccccff,specular: 0xbdbdbd } );
+	 	 materialPlaneExtend.magFilter = THREE.Linear;
+		 materialPlaneExtend.minFilter = THREE.Linear;
 
 	 var planeExtend = new THREE.Mesh(new THREE.PlaneBufferGeometry(3500000, 3500000), materialPlaneExtend);
 	     planeExtend.position.x = -200000;
