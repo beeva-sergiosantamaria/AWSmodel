@@ -311,12 +311,13 @@ function step(num){
                 movement(-28500,5000,105000, camera.position, 100, 2000);
                 break; 
             case 7:
-                removeIndicatorsValues()
+                removeIndicatorsValues();
                 var leters = [
                    {x: -50000,y: 295000,z: 488000, text: 'MQTT protocol', color: '#6666ff', bgColor: {r:255, g:100, b:100, a:0}, scale:{ x: 8000, y: 4000}, fontSize: 40 },
                    {x: -50000,y: 287000,z: 488000, text: 'MQTT protocol', color: '#6666ff', bgColor: {r:255, g:100, b:100, a:0},  scale:{ x: 8000, y: 4000 }, fontSize: 40},
                    {x: -50000,y: 286000,z: 528000, text: '((  API REST  ))', color: '#FFFF66', bgColor: {r:255, g:100, b:100, a:0},  scale:{ x: 4000, y: 2000 }, fontSize: 40},
                    {x: -50000,y: 285000,z: 500000, text: 'Device Shadow', color: '#66FF99', bgColor: {r:255, g:100, b:100, a:0},  scale:{ x: 8000, y: 4000 }, fontSize: 40},
+                   {x: -50000,y: 295000,z: 499000, text: 'Rules Engine', color: '#66FF99', bgColor: {r:255, g:100, b:100, a:0},  scale:{ x: 8000, y: 4000 }, fontSize: 40},
                    {x: -49000,y: 299000,z: 515000, text: 'INSERT', color: '#FF9966', bgColor: {r:255, g:100, b:100, a:0},  scale:{ x: 8000, y: 4000 }, fontSize: 40}
                 ]
                 RemoveLetters();

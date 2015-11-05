@@ -256,7 +256,7 @@ function addSensors(group){
 	cloudGroup.add( sphere );
 
  	var cloudattr = [
- 					{x: -50000,y: 300000,z: 500000, dx: 100,dy: 3000,dz: 3000, image: 'rules.gif'},
+ 					{x: -50000,y: 300000,z: 500000, dx: 100,dy: 3000,dz: 3000, image: 'rules.png'},
  					{x: -48000,y: 305000,z: 530000, dx: 100,dy: 2000,dz: 8000, image: 'dynamodbimg.png'},
  					{x: -50000,y: 290000,z: 518000, dx: 100,dy: 2000,dz: 8000, image: 'lambda.png'},
  					{x: -50000,y: 290000,z: 500000, dx: 100,dy: 3000,dz: 3000, image: 'dShadow.png'}
@@ -573,15 +573,16 @@ function drawDataGraph(idSensor) {
 			        if(temporalDate > 22 ) temporalDate = 0;
 			        else temporalDate = temporalDate+1;
 			    	dataScale.push(temporalDate);
-			        cities[0].values.push({date: temporalDate, temperature: (parseFloat(result.Items[i].payload.reported.temperature)*100)/30 });
+			        cities[0].values.push({date: temporalDate, temperature: (parseFloat(result.Items[i].payload.reported.temperature)*100)/40 });
 			        cities[1].values.push({date: temporalDate, temperature: parseFloat(result.Items[i].payload.reported.humidity) });
-			        cities[2].values.push({date: temporalDate, temperature: (parseFloat(result.Items[i].payload.reported.lux)*100)/1100 });
-			        cities[3].values.push({date: temporalDate, temperature: (parseFloat(result.Items[i].payload.reported.pressure)*100)/1000 });
+			        cities[2].values.push({date: temporalDate, temperature: (parseFloat(result.Items[i].payload.reported.lux)*100)/1400 });
+			        cities[3].values.push({date: temporalDate, temperature: (parseFloat(result.Items[i].payload.reported.pressure)*100)/1200 });
 			    }
-		document.getElementById("specificTemp").innerHTML = ((cities[0].values[9].temperature*30)/100).toFixed(1)+'°C';
+		console.log('datos: ', cities);	    
+		document.getElementById("specificTemp").innerHTML = ((cities[0].values[9].temperature*40)/100).toFixed(1)+'°C';
 		document.getElementById("specificHum").innerHTML = cities[1].values[9].temperature+'%';
-		document.getElementById("specificLux").innerHTML = ((cities[2].values[9].temperature*1100)/100).toFixed(1)+'L';
-		document.getElementById("specificPress").innerHTML = ((cities[3].values[9].temperature*1000)/100).toFixed(1)+'N'; 
+		document.getElementById("specificLux").innerHTML = ((cities[2].values[9].temperature*1400)/100).toFixed(1)+'L';
+		document.getElementById("specificPress").innerHTML = ((cities[3].values[9].temperature*1200)/100).toFixed(1)+'N'; 
 
 		var margin = {top: 20, right: 80, bottom: 30, left: 20},
 		    width = 400 - margin.left - margin.right,
@@ -934,10 +935,12 @@ function addUbiqons(){
  	 var geometry = new THREE.Geometry();
 	     geometry.vertices.push(new THREE.Vector3(-52000, 11000, 67200));
 	     geometry.vertices.push(new THREE.Vector3(-52000, 15000, 87000));
+	     geometry.vertices.push(new THREE.Vector3(-52000, 4000, 88000));
 
 	 var geometry2 = new THREE.Geometry();
 	     geometry2.vertices.push(new THREE.Vector3(-52000, 11000, 99500));
 	     geometry2.vertices.push(new THREE.Vector3(-52000, 15000, 87000)); 
+	     geometry2.vertices.push(new THREE.Vector3(-52000, 3000, 85000));
 
 	 var geometry3 = new THREE.Geometry();
 	     geometry3.vertices.push(new THREE.Vector3(-19500, 13000, 100000));
