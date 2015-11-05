@@ -149,6 +149,8 @@ function currentDate(){
     var curr_min = d.getMinutes();
     var curr_sec = d.getSeconds();
 
+    if(parseInt(curr_min)<10) curr_min = '0'+curr_min;
+
     var current = curr_day+'/'+curr_month+'/'+curr_year+' - '+curr_hour+':'+curr_min;
   return current;  
 }
