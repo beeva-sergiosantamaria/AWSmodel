@@ -168,9 +168,9 @@ function deleteSensor(){
     if(zoneGroup){
         for(var i = 0;i<zoneGroup.children.length; i++){
             var tween = new TWEEN.Tween(zoneGroup.children[i].scale).to({
-                    x: 0,
-                    y: 0,
-                    z: 0
+                    x: 1,
+                    y: 1,
+                    z: 1
             },500).easing(TWEEN.Easing.Sinusoidal.InOut).onUpdate(function () {
           }).delay(0).start();
         }

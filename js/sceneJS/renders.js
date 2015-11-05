@@ -57,7 +57,6 @@ function addGeoObject ( group, svgObject, amt, altura, name ) {
 		}
 
 	for (var i = 0; i < len; ++i) {
-		THREE.BoxGeometry
 		
 		path = $d3g.transformSVGPath( thePaths[i] );
 		color = new THREE.Color( theColors[i] ); 
@@ -203,7 +202,7 @@ function addSensors(group){
     var spriteMaterial = new THREE.SpriteMaterial( 
         { map: textureX } );
     var sprite = new THREE.Sprite( spriteMaterial );
-    sprite.scale.set(6000,4000,4.0);
+    sprite.scale.set(6000,4000,4);
     sprite.position.set(-50000,283000,527800)
 
     scene.add(sprite);
@@ -213,7 +212,7 @@ function addSensors(group){
     var spriteMaterial = new THREE.SpriteMaterial( 
         { map: textureX } );
     var sprite = new THREE.Sprite( spriteMaterial );
-    sprite.scale.set(4000,4000,4.0);
+    sprite.scale.set(4000,4000,4);
     sprite.position.set(-50000,283000,533000)
 
     scene.add(sprite);
@@ -321,7 +320,7 @@ function addHumanlineas() {
 	var spriteMaterialGlass = new THREE.SpriteMaterial( 
         { map: textureGlass } );
     var spriteGlass = new THREE.Sprite( spriteMaterialGlass );
-    	spriteGlass.scale.set(1000,500,4.0);
+    	spriteGlass.scale.set(1000,500,4);
     	spriteGlass.position.set(-51500,4000,88000)
 
     scene.add(spriteGlass);
@@ -331,7 +330,7 @@ function addHumanlineas() {
     var spriteMaterialWatch = new THREE.SpriteMaterial( 
         { map: textureWatch } );
     var spriteWatch = new THREE.Sprite( spriteMaterialWatch );
-    	spriteWatch.scale.set(1000,800,4.0);
+    	spriteWatch.scale.set(1000,800,4);
     	spriteWatch.position.set(-51500,3000,85000)
 
     scene.add(spriteWatch);
@@ -709,13 +708,13 @@ function createACtionZones(){
 
 		    var materialsensorZone = new THREE.MeshBasicMaterial(  { color: 0xAAAAAA, transparent: true, opacity: 0.5 } );
 
-		    var sensorZone = new THREE.Mesh( new THREE.RingGeometry( 0, 23000, 30, 1, startAngle, endAngles ), materialsensorZone );
+		    var sensorZone = new THREE.Mesh( new THREE.RingGeometry( 0, 23, 30, 1, startAngle, endAngles ), materialsensorZone );
 
 		    sensorZone.position.set(positions[a].x,positions[a].y,positions[a].z);
 		    sensorZone.rotation.x = (3*Math.PI)/2;
-		    sensorZone.scale.x = 0;
-		    sensorZone.scale.y = 0;
-		    sensorZone.scale.z = 0;
+		    sensorZone.scale.x = 1;
+		    sensorZone.scale.y = 1;
+		    sensorZone.scale.z = 1;
 		    sensorZone.name = 'sensorZone';
 
 		    zoneGroup.add(sensorZone);
@@ -784,9 +783,9 @@ function sensorZoneAction(){
 
 		for(var i = 0;i<zoneGroup.children.length; i++){
 			var tween = new TWEEN.Tween(zoneGroup.children[i].scale).to({
-		            x: 1,
-		            y: 1,
-		            z: 1
+		            x: 1000,
+		            y: 1000,
+		            z: 1000
 	          },1000).easing(TWEEN.Easing.Sinusoidal.InOut).onUpdate(function () {
 	          }).delay(2000).start();
 		}
@@ -1009,7 +1008,7 @@ function addUbiqons(){
     var spriteMaterial = new THREE.SpriteMaterial( 
         { map: textureX } );
     var sprite = new THREE.Sprite( spriteMaterial );
-    sprite.scale.set(8000,4000,4.0);
+    sprite.scale.set(8000,4000,4);
     sprite.position.set(-52000,15000,87000)
 
     scene.add(sprite);
