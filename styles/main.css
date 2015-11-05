@@ -144,6 +144,7 @@ body {
   left: 40px;
   font-family: bbvaweb;
   background-color: rgba(11, 23, 38, 0.75);
+  padding: 10px;
 }
 .hide {
   opacity: 0;
