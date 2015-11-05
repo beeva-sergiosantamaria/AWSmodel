@@ -514,15 +514,15 @@ function addAmbient(){
 
 	 var buildingGroup = new THREE.Group();
 
-	 var materialPlaneExtend = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture( 'images/textures/exteriores.png' ),color: 0xbdbdbd, ambient: 0xbdbdbd, emissive: 0Xccccff,specular: 0xbdbdbd } );
+	 var materialPlaneExtend = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture( 'images/textures/mapa4.png' ),color: 0xbdbdbd, ambient: 0xbdbdbd, emissive: 0Xccccff,specular: 0xbdbdbd } );
 
-	 var planeExtend = new THREE.Mesh(new THREE.PlaneBufferGeometry(1800000, 1800000), materialPlaneExtend);
-	     planeExtend.position.x = -70000;
-	     planeExtend.position.z = 50000;
+	 var planeExtend = new THREE.Mesh(new THREE.PlaneBufferGeometry(3500000, 3500000), materialPlaneExtend);
+	     planeExtend.position.x = -200000;
+	     planeExtend.position.z = -30000;
 	     planeExtend.position.y = -1000;
 	     planeExtend.rotation.x = Math.PI / 2;
 		 planeExtend.rotation.y = Math.PI;
-		 planeExtend.rotation.z = -0.55;
+		 planeExtend.rotation.z =-1.66;
     buildingGroup.add(planeExtend);
 
     var buildingAttr = [{x: -60000, y: 1000, z: 170000, dx: 20000, dy: 30000, dz: 15000, rotate: 0},

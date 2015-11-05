@@ -114,6 +114,7 @@ function init() {
     movieScreen.position.set(-18800,4000,88000);
     movieScreen.rotation.y = (3*Math.PI)/2;
     standGroup.add(movieScreen);
+    video.play();
    
    //---------------END VIDEO --------------------- 
 
@@ -242,7 +243,6 @@ function step(num){
                 deleteSensor();
                 movement(-145000, 0, 80000, controls.target, 0);
                 movement(-43000, 141700, 177000, camera.position, 100, 2000);
-                video.pause();
                 break;
             case 1:
                 removeIndicatorsValues();    
@@ -258,7 +258,6 @@ function step(num){
                 document.getElementById("current").innerHTML = current;
                 movement(-18500,9000,100000, controls.target, 0);
                 movement(-28500,9000,100000, camera.position, 100, 2000);
-                video.pause();
                 break;
             case 2: 
                 deleteSensor();
@@ -271,7 +270,6 @@ function step(num){
                 document.getElementById("title").innerHTML = 'Door Sensor'
                 movement(-51500,9000,67200, controls.target, 0);
                 movement(-41500,9000,67200, camera.position, 100, 2000);
-                video.pause();
                 break;
             case 3:
                 removeIndicatorsValues()
@@ -280,7 +278,6 @@ function step(num){
                 movement(-32000,0,97000, controls.target, 0);
                 movement(-29000,37000,111000, camera.position, 100, 1000);
                 setTimeout(sensorZoneAction, 0); 
-                video.pause();
                 break;
             case 4:
                 removeIndicatorsValues()
@@ -291,7 +288,6 @@ function step(num){
                 setTimeout(deleteInfo, 0); 
                 movement(-18500,5000,105000, controls.target, 0);
                 movement(-28500,5000,105000, camera.position, 100, 2000);
-                video.pause();
                 break;
             case 5:
                 removeIndicatorsValues()
@@ -313,7 +309,6 @@ function step(num){
                 setTimeout(deleteInfo, 0); 
                 movement(-18500,5000,105000, controls.target, 0);
                 movement(-28500,5000,105000, camera.position, 100, 2000);
-                video.pause();
                 break; 
             case 7:
                 removeIndicatorsValues()
