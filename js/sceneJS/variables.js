@@ -8,6 +8,7 @@ var currentSensor = 'none';
 var myTimersetInterval = 0;
 var generaInterval = 0;
 var colorCount = 0;
+var stopAnimation = false;
 var currentVideoStep = 0;
 var currentIntervalTime = 4000;
 var clock = new THREE.Clock();

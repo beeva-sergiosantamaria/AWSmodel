@@ -199,7 +199,9 @@ function update()
     if ( keyboard.pressed("6") )     { step(6); currentVideoStep=6; } //RASP 2  
     if ( keyboard.pressed("7") )     { step(7); currentVideoStep=7;}//CLOUD PANORAMIC  
     if ( keyboard.pressed("8") )     { step(8); currentVideoStep=8;}//HUMAN  
-    if ( keyboard.pressed("9") )     { step(13); }//TV   
+    if ( keyboard.pressed("9") )     { step(13); }//TV  
+    if ( keyboard.pressed("x") )     { stopAnimation = true; }//PAUSE ANIMATION 
+    if ( keyboard.pressed("z") )     { stopAnimation = false; }//RESTART ANIMATION 
 
     /*if ( keyboard.pressed("2") )
         {
@@ -354,7 +356,9 @@ function step(num){
 }
 
 generaInterval = setInterval(function() {
-                    step(currentVideoStep);
-                    if(currentVideoStep<8) currentVideoStep = currentVideoStep + 1;
-                    else currentVideoStep = 0;
-                 }, 20000);
+     if(!stopAnimation){
+         step(currentVideoStep);
+         if(currentVideoStep<8) currentVideoStep = currentVideoStep + 1;
+         else currentVideoStep = 0;
+      }
+}, 20000);

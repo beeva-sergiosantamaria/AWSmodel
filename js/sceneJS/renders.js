@@ -1020,7 +1020,7 @@ function addUbiqons(){
 		  scene.add(ubsphere);  
 		}
 
-	var material1 = new THREE.MeshBasicMaterial(  { color: 0xAAAAAA, transparent: true, opacity: 0.6 } );
+	/*var material1 = new THREE.MeshBasicMaterial(  { color: 0xAAAAAA, transparent: true, opacity: 0.6 } );
 
 		var ubcircunference1 = new THREE.Mesh( new THREE.RingGeometry( 95, 100, 30, 1, 0, Math.PI * 2 ), material1 );
 
@@ -1068,5 +1068,5 @@ function addUbiqons(){
 			    movement(scaleValue,scaleValue,1, ubcircunference2.scale, 0, 500);
 			    movement(scaleValue,scaleValue,1, ubcircunference3.scale, 0, 500);
 				movement(scaleValue,scaleValue,1, ubcircunference4.scale, 0, 500);
-			 }, 500);	
+			 }, 500);*/	
 }
