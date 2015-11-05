@@ -237,6 +237,7 @@ function update()
 function step(num){
     switch ( num ) {
             case 0:
+                deleteInfoHuman();
                 removeIndicatorsValues()         
                 if(myTimersetInterval != 0) clearInterval(myTimersetInterval);
                 setTimeout(deleteInfo, 0); 
@@ -245,6 +246,7 @@ function step(num){
                 movement(-43000, 141700, 177000, camera.position, 100, 2000);
                 break;
             case 1:
+                deleteInfoHuman();
                 removeIndicatorsValues();    
                 if(myTimersetInterval != 0) clearInterval(myTimersetInterval);
                 var current = currentDate();
@@ -259,7 +261,8 @@ function step(num){
                 movement(-18500,9000,100000, controls.target, 0);
                 movement(-28500,9000,100000, camera.position, 100, 2000);
                 break;
-            case 2: 
+            case 2:
+                deleteInfoHuman(); 
                 deleteSensor();
                 if(myTimersetInterval != 0) clearInterval(myTimersetInterval);
                 if    (!scene.getObjectByName( "visor" )) setTimeout(lookVisor({x: -51700,y: 9000,z: 67200}, Math.PI/2), 4000);
@@ -272,6 +275,7 @@ function step(num){
                 movement(-41500,9000,67200, camera.position, 100, 2000);
                 break;
             case 3:
+                deleteInfoHuman();
                 removeIndicatorsValues()
                 if(myTimersetInterval != 0) clearInterval(myTimersetInterval);
                 setTimeout(deleteInfo, 0); 
@@ -280,6 +284,7 @@ function step(num){
                 setTimeout(sensorZoneAction, 0); 
                 break;
             case 4:
+                deleteInfoHuman();
                 removeIndicatorsValues()
                 if(!scene.getObjectByName( "visor" )) setTimeout(lookVisor({x: -18500,y: 5000,z: 105000}, (3*Math.PI)/2), 4000);
                 else  { scene.getObjectByName( "visor" ).position.set(-18500,5000,105000); scene.getObjectByName( "visor" ).rotation.y = (3*Math.PI)/2;}
@@ -290,6 +295,7 @@ function step(num){
                 movement(-28500,5000,105000, camera.position, 100, 2000);
                 break;
             case 5:
+                deleteInfoHuman();
                 removeIndicatorsValues()
                 if(myTimersetInterval != 0) clearInterval(myTimersetInterval);  
                 movement(-32000,0,97000, controls.target, 0);
@@ -301,6 +307,7 @@ function step(num){
                  }, 3500);
                 break; 
             case 6:
+                deleteInfoHuman();
                 removeIndicatorsValues()
                 if(!scene.getObjectByName( "visor" )) setTimeout(lookVisor({x: -18500,y: 5000,z: 105000}, (3*Math.PI)/2), 4000);
                 else  { scene.getObjectByName( "visor" ).position.set(-18500,5000,105000); scene.getObjectByName( "visor" ).rotation.y = (3*Math.PI)/2;}
@@ -311,6 +318,7 @@ function step(num){
                 movement(-28500,5000,105000, camera.position, 100, 2000);
                 break; 
             case 7:
+                deleteInfoHuman();
                 removeIndicatorsValues();
                 var leters = [
                    {x: -50000,y: 295000,z: 488000, text: 'MQTT protocol', color: '#6666ff', bgColor: {r:255, g:100, b:100, a:0}, scale:{ x: 8000, y: 4000}, fontSize: 40 },
@@ -340,6 +348,7 @@ function step(num){
                  }, 10500);
                 break;
             case 8:
+                addInfoHuman();
                 removeIndicatorsValues()
                 addHumanlineas();
                 if(myTimersetInterval != 0) clearInterval(myTimersetInterval);

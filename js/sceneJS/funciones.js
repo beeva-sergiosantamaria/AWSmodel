@@ -182,3 +182,13 @@ function deleteSensor(){
     scene.remove(circunference3);
     scene.remove(circunference4);
 }
+function deleteInfoHuman(){
+    $("#infoHuman").removeClass('fadeInDownBig');
+    $("#infoHuman").addClass('fadeOutUpBig');
+}
+
+
+function addInfoHuman(){
+    $("#infoHuman").removeClass('fadeOutUpBig');
+    $("#infoHuman").addClass('fadeInDownBig');
+}

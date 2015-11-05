@@ -167,3 +167,26 @@ body {
   background-color: rgba(11, 23, 38, 0.75);
   padding: 10px
 }
+
+.humanData {
+  position:absolute;
+  top: 100px;
+  right: 40px;
+  width: 350px;
+  height: 500px;
+  background-color: rgba(11, 23, 38, 0.75);
+  padding: 35px;
+}
+.textExplanation{
+  color: white;
+  text-align: justify;
+  font-size: 18px;
+}
+.explainImage{
+  text-align: center;
+}
+.imageinside{
+  height: 150px;
+  width: 150px;
+  margin: 20px;
+}
