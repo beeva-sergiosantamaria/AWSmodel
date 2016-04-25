@@ -75,7 +75,29 @@ function init() {
 
     //------HUMAN MODEL --------------
 
-    THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
+    var onProgress = function ( xhr ) {
+                    if ( xhr.lengthComputable ) {
+                        var percentComplete = xhr.loaded / xhr.total * 100;
+                        console.log( Math.round(percentComplete, 2) + '% downloaded' );
+                    }
+                };
+    var onError = function ( xhr ) { };
+       THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
+       var mtlLoader = new THREE.MTLLoader();
+           mtlLoader.load( 'modelos/male02/male02_dds.mtl', function( materials ) {
+         materials.preload();
+       var objLoader = new THREE.OBJLoader();
+           objLoader.load( 'modelos/male02/male02.obj', function ( object ) {
+              object.rotation.y = Math.PI / 2;
+              object.position.set(-52000,0,87000);
+              object.scale.x = 19;
+              object.scale.y = 19;
+              object.scale.z = 19;
+              scene.add( object );
+        }, onProgress, onError );
+    });
+
+    /*THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
 
     var loader = new THREE.OBJMTLLoader();
         loader.load( 'modelos/male02/male02.obj', 'modelos/male02/male02_dds.mtl', function ( object ) {
@@ -85,7 +107,7 @@ function init() {
         object.scale.y = 19;
         object.scale.z = 19;
       scene.add( object );
-    });  
+    });  */
 
     //---------VIDEO -----------------
 
